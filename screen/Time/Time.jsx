@@ -2,5 +2,5 @@ import React from 'react';
 import { Text } from 'react-native';
 
 export default function TimeScreen() {
-  return <Text>Time 123</Text>;
+  return <Text>Time 123456</Text>;
 }
