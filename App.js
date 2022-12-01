@@ -1,6 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { StyleSheet } from 'react-native';
-import BottomTabNavigator from './navigator/BottomTabNavigator';
+import BottomTabNavigator from './app/navigator/BottomTabNavigator';
 
 export default function App() {
   return (
