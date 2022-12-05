@@ -14,5 +14,5 @@ export default function LogScreen() {
     setPost(res);
   };
 
-  return <Text>{post?.title}</Text>;
+  return <Text>id: {post?.id}</Text>;
 }
