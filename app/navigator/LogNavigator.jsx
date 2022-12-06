@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import LogScreen from '../screen/Log/Log';
+import LogScreen from '../screen/Log/LogScreen';
 
 const Stack = createNativeStackNavigator();
 

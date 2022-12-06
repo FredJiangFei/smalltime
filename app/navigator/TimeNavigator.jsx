@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import TimeScreen from '../screen/Time/Time';
+import TimeScreen from '../screen/Time/TimeScreen';
 
 const Stack = createNativeStackNavigator();
 

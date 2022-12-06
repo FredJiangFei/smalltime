@@ -1,10 +1,10 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import LogNavigator from './LogNavigator';
 import MineNavigator from './MineNavigator';
-import ProjectNavigator from './ProjectNavigator';
 import StatisticsNavigator from './StatisticsNavigator';
 import TimeNavigator from './TimeNavigator';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import MomentsNavigator from './MomentsNavigator';
 
 const Tab = createBottomTabNavigator();
 
@@ -16,6 +16,19 @@ export default function BottomTabNavigator() {
         tabBarShowLabel: false,
       }}
     >
+      <Tab.Screen
+        name="MomentsNavigator"
+        component={MomentsNavigator}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons
+              name="egg-easter"
+              size={size}
+              color={color}
+            />
+          ),
+        }}
+      />
       <Tab.Screen
         name="TimeNavigator"
         component={TimeNavigator}
@@ -29,19 +42,7 @@ export default function BottomTabNavigator() {
           ),
         }}
       />
-      <Tab.Screen
-        name="ProjectNavigator"
-        component={ProjectNavigator}
-        options={{
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons
-              name="egg-easter"
-              size={size}
-              color={color}
-            />
-          ),
-        }}
-      />
+
       <Tab.Screen
         name="StatisticsNavigator"
         component={StatisticsNavigator}

@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import MineScreen from '../screen/Mine/Mine';
+import MineScreen from '../screen/Mine/MineScreen';
 
 const Stack = createNativeStackNavigator();
 

@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import StatisticsScreen from '../screen/Statistics/Statistics';
+import StatisticsScreen from '../screen/Statistics/StatisticsScreen';
 
 const Stack = createNativeStackNavigator();
 
