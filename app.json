@@ -15,9 +15,7 @@
       "fallbackToCacheTimeout": 0,
       "url": "https://u.expo.dev/e69c705c-64a4-484a-8624-71af77a9e413"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.fredjiang.smalltime"
@@ -39,6 +37,19 @@
     },
     "runtimeVersion": {
       "policy": "sdkVersion"
+    },
+    "plugins": ["sentry-expo"],
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "organization": "shinetech",
+            "project": "small-time",
+            "authToken": "454963bd2e9249f6a33fd4c6723227ef2cf3185ed94246218eabaf6c40088eeb"
+          }
+        }
+      ]
     }
   }
 }
