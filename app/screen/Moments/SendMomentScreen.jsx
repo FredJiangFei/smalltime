@@ -1,6 +1,14 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Button, Text } from 'react-native';
 
-export default function SendMomentScreen() {
-  return <Text>SendMoment</Text>;
+export default function SendMomentScreen({ navigation, route }) {
+  return (
+    <>
+      <Text>SendMoment</Text>
+      <Button
+        title="Logs"
+        onPress={() => navigation.navigate('LogNavigator', { screen: 'Log' })}
+      />
+    </>
+  );
 }
