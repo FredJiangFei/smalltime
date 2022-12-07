@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { Alert, StyleSheet } from 'react-native';
+import { Alert, StyleSheet, View } from 'react-native';
 import BottomTabNavigator from './app/navigator/BottomTabNavigator';
 import * as Sentry from 'sentry-expo';
 import { AppState } from 'react-native';
@@ -30,12 +30,16 @@ export default function App() {
       const update = await Updates.checkForUpdateAsync();
       if (update.isAvailable) {
         await Updates.fetchUpdateAsync();
-        Alert.alert('Apply update', 'Hey there! We got an update for you 🥳🎉.', [
-          {
-            text: 'Cancel'
-          },
-          { text: 'OK', onPress: () => Updates.reloadAsync() },
-        ]);
+        Alert.alert(
+          'Apply update',
+          'Hey there! We got an update for you 🥳🎉.',
+          [
+            {
+              text: 'Cancel',
+            },
+            { text: 'OK', onPress: () => Updates.reloadAsync() },
+          ]
+        );
       }
     } catch (e) {
       // handle or log error

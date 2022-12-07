@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import { Button, Text, TextInput, StyleSheet, View } from 'react-native';
 import momentService from '../../api/momentService';
+import Screen from '../../components/Screen';
 import colors from '../../config/colors';
 
 export default function SendMomentScreen({ navigation, route }) {
   const [text, setText] = useState('');
 
   const handleSubmit = () => {
-    momentService.createMoment({ text: text });
+    momentService.createMoment({ desc: text });
     navigation.goBack();
   };
 
   return (
-    <>
+    <Screen>
       <Text>SendMoment</Text>
       <Button
         title="Logs"
@@ -25,7 +26,7 @@ export default function SendMomentScreen({ navigation, route }) {
       </View>
 
       <Button title="Save" onPress={handleSubmit} />
-    </>
+    </Screen>
   );
 }
 
@@ -34,8 +35,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    marginLeft: 8,
-    marginRight: 8,
   },
   textInput: {
     height: 40,
