@@ -7,16 +7,19 @@ import {
   View,
   Pressable,
   Image,
+  ScrollView,
 } from 'react-native';
 import momentService from '../../api/momentService';
-import Screen from '../../components/Screen';
 import colors from '../../config/colors';
 import useImagePicker from '../../hooks/useImagePicker';
 import Icon from '../../components/Icon';
+import useLocation from '../../hooks/useLocation';
+import MapView, { Marker } from 'react-native-maps';
 
 export default function SendMomentScreen({ navigation, route }) {
   const [text, setText] = useState('');
   const { openImagePickerAsync, openCameraAsync, image } = useImagePicker();
+  const { location, setLocation } = useLocation();
 
   const handleSubmit = () => {
     momentService.createMoment({ desc: text, imageUrl: image.uri });
@@ -24,7 +27,7 @@ export default function SendMomentScreen({ navigation, route }) {
   };
 
   return (
-    <Screen>
+    <ScrollView style={{ paddingLeft: 8, paddingRight: 8 }}>
       <Text>SendMoment</Text>
       <Button
         title="Logs"
@@ -49,8 +52,26 @@ export default function SendMomentScreen({ navigation, route }) {
         </Pressable>
       </View>
 
+      <Text>latitude: {location?.latitude}</Text>
+      <Text>longitude: {location?.longitude}</Text>
+      <MapView
+        style={{ alignSelf: 'stretch', height: 200 }}
+        region={{
+          latitude: location?.latitude,
+          longitude: location?.longitude,
+          latitudeDelta: 0.0122,
+          longitudeDelta: 0.0121,
+        }}
+      >
+        <Marker
+          coordinate={{
+            latitude: location?.latitude,
+            longitude: location?.longitude,
+          }}
+        />
+      </MapView>
       <Button title="Save" onPress={handleSubmit} />
-    </Screen>
+    </ScrollView>
   );
 }
 
