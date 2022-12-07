@@ -2,12 +2,15 @@ const moments = [];
 
 function createMoment(data) {
   data.id = CreateGuid();
+  data.created = new Date().getTime();
 
   moments.push(data);
 }
 
 function getMoments() {
-  return moments.reverse();
+  return moments.sort(function (a, b) {
+    return b.created - a.created;
+  });
 }
 
 function CreateGuid() {

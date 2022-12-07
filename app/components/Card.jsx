@@ -6,14 +6,13 @@ import {
   Image,
   Text,
 } from 'react-native';
-import colors from '../config/colors';
 
 export default function Card({ desc, imageUrl, onPress }) {
   return (
     <TouchableWithoutFeedback onPress={() => onPress(desc)}>
       <View style={styles.root}>
         <Text>{desc}</Text>
-        <Image style={styles.image} source={{ uri: imageUrl }} />
+        {imageUrl && <Image style={styles.image} source={{ uri: imageUrl }} />}
       </View>
     </TouchableWithoutFeedback>
   );
@@ -21,11 +20,15 @@ export default function Card({ desc, imageUrl, onPress }) {
 
 const styles = StyleSheet.create({
   root: {
-    backgroundColor: colors.secondary,
-    marginTop: 8
+    marginTop: 8,
+    paddingBottom: 8,
+    padding: 8,
+    borderBottomColor: 'red',
+    borderBottomWidth: 1,
   },
   image: {
     width: '100%',
-    height: 50,
+    height: 150,
+    resizeMode: 'contain',
   },
 });

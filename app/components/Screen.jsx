@@ -1,13 +1,13 @@
-import React from 'react'
-import { StyleSheet, SafeAreaView, View } from 'react-native'
-import Constants from 'expo-constants'
+import React from 'react';
+import { StyleSheet, SafeAreaView, View } from 'react-native';
+import Constants from 'expo-constants';
 
 export default function Screen({ children, style }) {
   return (
     <SafeAreaView style={[styles.screen, style]}>
       <View style={[styles.view, style]}>{children}</View>
     </SafeAreaView>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -18,6 +18,6 @@ const styles = StyleSheet.create({
   view: {
     flex: 1,
     marginLeft: 8,
-    marginRight: 8
+    marginRight: 8,
   },
-})
+});

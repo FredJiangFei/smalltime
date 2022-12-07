@@ -30,7 +30,7 @@ export default function MomentsScreen({ navigation, route }) {
       <FlatList
         data={moments}
         keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => <Card desc={item.desc} />}
+        renderItem={({ item }) => <Card {...item} />}
       />
     </Screen>
   );
