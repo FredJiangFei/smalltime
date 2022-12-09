@@ -9,7 +9,7 @@ import {
 
 export default function Card({ desc, imageUrl, onPress }) {
   return (
-    <TouchableWithoutFeedback onPress={() => onPress(desc)}>
+    <TouchableWithoutFeedback onPress={() => onPress(imageUrl)}>
       <View style={styles.root}>
         <Text>{desc}</Text>
         {imageUrl && <Image style={styles.image} source={{ uri: imageUrl }} />}

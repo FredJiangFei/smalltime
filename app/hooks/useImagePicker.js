@@ -12,10 +12,11 @@ const useImagePicker = () => {
             return;
         }
 
-        let result = await ImagePicker.launchImageLibraryAsync({
-            allowsEditing: true,
-            aspect: [4, 4],
-        });
+        let result = await ImagePicker.launchImageLibraryAsync();
+        // {
+        //     allowsEditing: true,
+        //     aspect: [4, 4],
+        // }
         if (result.canceled === true) {
             return;
         }
@@ -31,10 +32,7 @@ const useImagePicker = () => {
             return;
         }
 
-        let result = await ImagePicker.launchCameraAsync({
-            allowsEditing: true,
-            aspect: [4, 4],
-        });
+        let result = await ImagePicker.launchCameraAsync();
         if (result.canceled) return;
 
         setImage(result);
