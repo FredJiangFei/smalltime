@@ -1,10 +1,10 @@
 import { useIsFocused } from '@react-navigation/native';
 import React, { useState, useEffect } from 'react';
-import { Button, FlatList, Image, Modal, StyleSheet } from 'react-native';
-import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
+import { Button, FlatList } from 'react-native';
 import momentService from '../../api/momentService';
 import Card from '../../components/Card';
 import Screen from '../../components/Screen';
+import ViewImage from './ViewImage';
 
 export default function MomentsScreen({ navigation, route }) {
   const [moments, setMoments] = useState([]);
@@ -34,26 +34,7 @@ export default function MomentsScreen({ navigation, route }) {
         renderItem={({ item }) => <Card {...item} onPress={setImage} />}
       />
 
-      <Modal visible={!!image}>
-        <Pressable style={[styles.container]} onPress={() => setImage(null)}>
-          <Image
-            style={{ height: 300, width: '100%' }}
-            resizeMode="contain"
-            source={{ uri: image }}
-          />
-        </Pressable>
-      </Modal>
+      <ViewImage image={image} setImage={setImage}/>
     </Screen>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'black',
-    overflow: 'hidden',
-    alignItems: 'center',
-    flex: 1,
-    justifyContent: 'center',
-  }
-});
