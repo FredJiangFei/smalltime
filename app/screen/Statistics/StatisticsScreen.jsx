@@ -1,6 +1,8 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Button, Text } from 'react-native';
 
-export default function StatisticsScreen() {
-  return <Text>Statistics</Text>;
+export default function StatisticsScreen({ navigation }) {
+  return <>
+    <Button title='Animated' onPress={() => navigation.navigate('Animated')}/>
+  </>;
 }
