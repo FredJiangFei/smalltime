@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
 import { Animated, Button, StyleSheet } from 'react-native';
 
-export default function AnimatedScreen() {
-  const pos = useRef(new Animated.Value(0)).current;
+export default function BallScreen() {
+  const tranX = useRef(new Animated.Value(0)).current;
   const handleMove = () => {
-    Animated.timing(pos, {
+    Animated.timing(tranX, {
       toValue: 200,
       duration: 1000,
       useNativeDriver: true,
@@ -14,7 +14,7 @@ export default function AnimatedScreen() {
   return (
     <>
       <Animated.View
-        style={[styles.ball, { transform: [{ translateX: pos }] }]}
+        style={[styles.ball, { transform: [{ translateX: tranX }] }]}
       />
       <Button title="Move" onPress={handleMove} />
     </>
