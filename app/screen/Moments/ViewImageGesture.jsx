@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Modal, StyleSheet } from 'react-native';
+import { Modal, StyleSheet } from 'react-native';
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import Animated, {

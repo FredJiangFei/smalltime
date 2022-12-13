@@ -9,7 +9,8 @@
     "web": "expo start --web",
     "preview": "eas build --profile preview --platform ios",
     "update": "eas update --branch preview",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "reset": "npx react-native start --reset-cache"
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.4.0",

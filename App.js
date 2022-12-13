@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { Alert, StyleSheet, View } from 'react-native';
-import BottomTabNavigator from './app/navigator/BottomTabNavigator';
+import { Alert } from 'react-native';
+import DrawerNavigator from './app/navigator/DrawerNavigator';
 import { AppState } from 'react-native';
 import * as Updates from 'expo-updates';
 
@@ -41,16 +41,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <BottomTabNavigator></BottomTabNavigator>
+      <DrawerNavigator></DrawerNavigator>
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

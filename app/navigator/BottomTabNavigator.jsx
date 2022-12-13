@@ -12,12 +12,12 @@ export default function BottomTabNavigator() {
   return (
     <Tab.Navigator
       screenOptions={{
-        headerShown: false,
         tabBarShowLabel: false,
+        headerShown: false,
       }}
     >
       <Tab.Screen
-        name="MomentsNavigator"
+        name="MomentsTab"
         component={MomentsNavigator}
         options={{
           tabBarIcon: ({ color, size }) => (
@@ -30,7 +30,7 @@ export default function BottomTabNavigator() {
         }}
       />
       <Tab.Screen
-        name="TimeNavigator"
+        name="TimeTab"
         component={TimeNavigator}
         options={{
           tabBarIcon: ({ color, size }) => (
@@ -44,7 +44,7 @@ export default function BottomTabNavigator() {
       />
 
       <Tab.Screen
-        name="StatisticsNavigator"
+        name="StatisticTab"
         component={StatisticsNavigator}
         options={{
           tabBarIcon: ({ color, size }) => (
@@ -57,7 +57,7 @@ export default function BottomTabNavigator() {
         }}
       />
       <Tab.Screen
-        name="LogNavigator"
+        name="LogTab"
         component={LogNavigator}
         options={{
           tabBarIcon: ({ color, size }) => (
@@ -71,7 +71,7 @@ export default function BottomTabNavigator() {
       />
 
       <Tab.Screen
-        name="MineNavigator"
+        name="MineTab"
         component={MineNavigator}
         options={{
           tabBarIcon: ({ color, size }) => (

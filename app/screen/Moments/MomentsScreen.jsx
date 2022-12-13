@@ -5,6 +5,7 @@ import momentService from '../../api/momentService';
 import Card from '../../components/Card';
 import Screen from '../../components/Screen';
 import ViewImage from './ViewImage';
+import ViewImageGesture from './ViewImageGesture';
 
 export default function MomentsScreen({ navigation, route }) {
   const [moments, setMoments] = useState([]);
@@ -28,13 +29,14 @@ export default function MomentsScreen({ navigation, route }) {
         title="Send a moment"
         onPress={() => navigation.navigate('SendMoment')}
       />
+
       <FlatList
         data={moments}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => <Card {...item} onPress={setImage} />}
       />
 
-      <ViewImage image={image} setImage={setImage}/>
+      <ViewImageGesture image={image} setImage={setImage} />
     </Screen>
   );
 }
