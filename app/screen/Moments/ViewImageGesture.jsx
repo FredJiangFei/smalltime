@@ -1,10 +1,10 @@
 import React from 'react';
-import { Modal, StyleSheet } from 'react-native';
-import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
+import { Modal, StyleSheet, View } from 'react-native';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
+  runOnJS,
 } from 'react-native-reanimated';
 
 export default function ViewImageGesture({ image, setImage }) {
@@ -38,18 +38,30 @@ export default function ViewImageGesture({ image, setImage }) {
     });
 
   const pinchGesture = Gesture.Pinch()
-    .onUpdate((e) => {
-      scale.value = savedScale.value * e.scale;
-    })
-    .onEnd(() => {
-      savedScale.value = scale.value;
-    });
+    .onUpdate((e) => (scale.value = savedScale.value * e.scale))
+    .onEnd(() => (savedScale.value = scale.value));
 
-  const composed = Gesture.Race(panGesture, pinchGesture);
+  const close = () => setImage(null);
+
+  const tap = Gesture.Tap().onStart(() => {
+    runOnJS(close)();
+    position.value = {
+      x: 0,
+      y: 0,
+    };
+    start.value = {
+      x: 0,
+      y: 0,
+    };
+    scale.value = 1;
+    savedScale.value = 1;
+  });
+
+  const composed = Gesture.Race(panGesture, pinchGesture, tap);
 
   return (
     <Modal visible={!!image}>
-      <Pressable style={[styles.container]} onPress={() => setImage(null)}>
+      <View style={styles.container}>
         <GestureDetector gesture={composed}>
           <Animated.Image
             style={[{ height: 300, width: '100%' }, animatedStyles]}
@@ -57,7 +69,7 @@ export default function ViewImageGesture({ image, setImage }) {
             source={{ uri: image }}
           />
         </GestureDetector>
-      </Pressable>
+      </View>
     </Modal>
   );
 }
