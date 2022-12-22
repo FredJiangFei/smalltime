@@ -43,7 +43,7 @@ export default function ViewImageGesture({ image, setImage }) {
 
   const close = () => setImage(null);
 
-  const tap = Gesture.Tap().onStart(() => {
+  const tapGesture = Gesture.Tap().onStart(() => {
     runOnJS(close)();
     position.value = {
       x: 0,
@@ -57,7 +57,7 @@ export default function ViewImageGesture({ image, setImage }) {
     savedScale.value = 1;
   });
 
-  const composed = Gesture.Race(panGesture, pinchGesture, tap);
+  const composed = Gesture.Race(panGesture, pinchGesture, tapGesture);
 
   return (
     <Modal visible={!!image}>
