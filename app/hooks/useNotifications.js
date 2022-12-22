@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import * as Notifications from 'expo-notifications';
-import Device from 'expo-device';
+import * as Device from 'expo-device';
 import { useNavigation } from '@react-navigation/native';
 
 Notifications.setNotificationHandler({
@@ -19,11 +19,14 @@ export const useNotifications = () => {
   var navigation = useNavigation();
 
   useEffect(() => {
-    registerTokenAsync().then((token) => setToken(token));
+    registerTokenAsync().then((token) => {
+      console.log(token);
+      setToken(token);
+    });
 
     // 监听notification
     listener.current = Notifications.addNotificationReceivedListener((n) =>
-      setNotification(n)
+      console.log(n)
     );
 
     // 点击notification，做什么
@@ -79,7 +82,7 @@ export const useNotifications = () => {
     Notifications.scheduleNotificationAsync({
       content: {
         title: 'Local notification',
-        body: "A test local notification",
+        body: 'A test local notification',
       },
       trigger: null,
     });
