@@ -14,7 +14,7 @@ export default function TimeScreen() {
 
   return (
     <>
-      <Text>Time 1234</Text>
+      <Text>Time 123</Text>
       <Text>token: {token}</Text>
       <Pressable onPress={handleCopyStatRecorderCode}>
         <MaterialCommunityIcons name="content-copy" size={28} />

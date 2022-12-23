@@ -8,6 +8,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "preview": "eas build --profile preview --platform ios",
+    "preview-android": "eas build --profile preview --platform android",
     "update": "eas update --branch preview",
     "test": "jest --watch",
     "reset": "npx react-native start --reset-cache"
