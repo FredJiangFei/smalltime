@@ -14,7 +14,6 @@ import colors from '../../config/colors';
 import useImagePicker from '../../hooks/useImagePicker';
 import Icon from '../../components/Icon';
 import useLocation from '../../hooks/useLocation';
-import MapView, { Marker } from 'react-native-maps';
 
 export default function SendMomentScreen({ navigation, route }) {
   const [text, setText] = useState('');
@@ -28,12 +27,6 @@ export default function SendMomentScreen({ navigation, route }) {
 
   return (
     <ScrollView style={{ paddingLeft: 8, paddingRight: 8 }}>
-      <Text>SendMoment</Text>
-      <Button
-        title="Logs"
-        onPress={() => navigation.navigate('LogNavigator', { screen: 'Log' })}
-      />
-
       <View style={styles.textInputContainer}>
         <Text style={{ width: 50 }}>Text:</Text>
         <TextInput onChangeText={setText} style={styles.textInput} />
@@ -51,25 +44,6 @@ export default function SendMomentScreen({ navigation, route }) {
           <Icon name="file-image" />
         </Pressable>
       </View>
-
-      <Text>latitude: {location?.latitude}</Text>
-      <Text>longitude: {location?.longitude}</Text>
-      <MapView
-        style={{ alignSelf: 'stretch', height: 200 }}
-        region={{
-          latitude: location?.latitude,
-          longitude: location?.longitude,
-          latitudeDelta: 0.0122,
-          longitudeDelta: 0.0121,
-        }}
-      >
-        <Marker
-          coordinate={{
-            latitude: location?.latitude,
-            longitude: location?.longitude,
-          }}
-        />
-      </MapView>
       <Button title="Save" onPress={handleSubmit} />
     </ScrollView>
   );
@@ -80,6 +54,8 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
+    marginTop: 16,
+    marginBottom: 8
   },
   textInput: {
     height: 40,
