@@ -13,12 +13,10 @@ import momentService from '../../api/momentService';
 import colors from '../../config/colors';
 import useImagePicker from '../../hooks/useImagePicker';
 import Icon from '../../components/Icon';
-import useLocation from '../../hooks/useLocation';
 
 export default function SendMomentScreen({ navigation, route }) {
   const [text, setText] = useState('');
   const { openImagePickerAsync, openCameraAsync, image } = useImagePicker();
-  const { location, setLocation } = useLocation();
 
   const handleSubmit = () => {
     momentService.createMoment({ desc: text, imageUrl: image.uri });
