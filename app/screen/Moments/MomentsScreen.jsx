@@ -26,7 +26,7 @@ export default function MomentsScreen({ navigation, route }) {
   return (
     <Screen>
       <Button
-        title="Send a moment"
+        title="Send a new moment"
         onPress={() => navigation.navigate('SendMoment')}
       />
 
