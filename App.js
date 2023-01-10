@@ -4,6 +4,7 @@ import { Alert } from 'react-native';
 import DrawerNavigator from './app/navigator/DrawerNavigator';
 import { AppState } from 'react-native';
 import * as Updates from 'expo-updates';
+import { NativeBaseProvider } from 'native-base';
 
 export default function App() {
   useEffect(() => {
@@ -40,8 +41,10 @@ export default function App() {
   };
 
   return (
-    <NavigationContainer>
-      <DrawerNavigator></DrawerNavigator>
-    </NavigationContainer>
+    <NativeBaseProvider>
+      <NavigationContainer>
+        <DrawerNavigator></DrawerNavigator>
+      </NavigationContainer>
+    </NativeBaseProvider>
   );
 }

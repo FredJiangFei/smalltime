@@ -1,20 +1,11 @@
 import React from 'react';
-import {
-  Button,
-  Text,
-  TextInput,
-  StyleSheet,
-  View,
-  Pressable,
-  Image,
-  ScrollView,
-} from 'react-native';
+import { Text, StyleSheet, Image, ScrollView } from 'react-native';
 import momentService from '../../api/momentService';
-import colors from '../../config/colors';
 import useImagePicker from '../../hooks/useImagePicker';
 import Icon from '../../components/Icon';
 import { Formik, useFormik } from 'formik';
 import * as Yup from 'yup';
+import { Input, FormControl, Button, Pressable } from 'native-base';
 
 const validationSchema = Yup.object().shape({
   desc: Yup.string().required().label('Text'),
@@ -47,31 +38,33 @@ export default function SendMomentScreen({ navigation, route }) {
       >
         {({ handleChange, handleSubmit, errors, setFieldTouched }) => (
           <>
-            <View style={styles.textInputContainer}>
-              <Text style={{ width: 50 }}>Text:</Text>
-              <TextInput
+            <FormControl>
+              <FormControl.Label>Message</FormControl.Label>
+              <Input
                 name="desc"
                 placeholder="Say something...."
                 onBlur={() => setFieldTouched('desc')}
                 onChangeText={handleChange('desc')}
-                style={styles.textInput}
               />
-            </View>
+            </FormControl>
+
             <Text style={{ color: 'red' }}>{errors['desc']}</Text>
 
             {image.uri && (
               <Image style={styles.thumbnail} source={{ uri: image.uri }} />
             )}
-
-            <View style={{ display: 'flex', flexDirection: 'row' }}>
+            <Pressable onPress={openCameraAsync}>
+              <Icon name="camera" />
+            </Pressable>
+            {/* <View style={{ display: 'flex', flexDirection: 'row' }}>
               <Pressable onPress={openCameraAsync}>
                 <Icon name="camera" />
               </Pressable>
               <Pressable onPress={openImagePickerAsync}>
                 <Icon name="file-image" />
               </Pressable>
-            </View>
-            <Button title="Save" onPress={handleSubmit} />
+            </View> */}
+            <Button onPress={handleSubmit}>Save</Button>
           </>
         )}
       </Formik>
@@ -80,20 +73,6 @@ export default function SendMomentScreen({ navigation, route }) {
 }
 
 const styles = StyleSheet.create({
-  textInputContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 16,
-    marginBottom: 8,
-  },
-  textInput: {
-    height: 40,
-    backgroundColor: colors.light,
-    borderRadius: 8,
-    borderWidth: 1,
-    flex: 1,
-  },
   thumbnail: {
     marginTop: 16,
     height: 150,
