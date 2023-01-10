@@ -1,12 +1,12 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import LogScreen from '../screen/Log/LogScreen';
+import ReciteScreen from '../screen/Recite/ReciteScreen';
 
 const Stack = createNativeStackNavigator();
 
-export default function LogNavigator() {
+export default function ReciteNavigator() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Log" component={LogScreen} />
+      <Stack.Screen name="Recite" component={ReciteScreen} />
     </Stack.Navigator>
   );
 }

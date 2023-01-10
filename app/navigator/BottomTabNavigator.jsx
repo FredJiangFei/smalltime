@@ -1,5 +1,5 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import LogNavigator from './LogNavigator';
+import ReciteNavigator from './ReciteNavigator';
 import MineNavigator from './MineNavigator';
 import StatisticsNavigator from './StatisticsNavigator';
 import TimeNavigator from './TimeNavigator';
@@ -57,8 +57,8 @@ export default function BottomTabNavigator() {
         }}
       />
       <Tab.Screen
-        name="LogTab"
-        component={LogNavigator}
+        name="ReciteTab"
+        component={ReciteNavigator}
         options={{
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons

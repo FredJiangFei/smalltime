@@ -12,13 +12,13 @@ export default function MomentsNavigator({ navigation }) {
       <Stack.Screen
         name="Moments"
         component={MomentsScreen}
-        options={{
-          headerRight: () => (
-            <Pressable onPress={() => navigation.openDrawer()}>
-              <MaterialCommunityIcons name='menu' size={24}/>
-            </Pressable>
-          ),
-        }}
+        // options={{
+        //   headerRight: () => (
+        //     <Pressable onPress={() => navigation.openDrawer()}>
+        //       <MaterialCommunityIcons name='menu' size={24}/>
+        //     </Pressable>
+        //   ),
+        // }}
       />
       <Stack.Screen name="SendMoment" component={SendMomentScreen} />
     </Stack.Navigator>
