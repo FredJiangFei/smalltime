@@ -16,7 +16,7 @@ export default function BottomTabNavigator() {
         headerShown: false,
       }}
     >
-      <Tab.Screen
+      {/* <Tab.Screen
         name="MomentsTab"
         component={MomentsNavigator}
         options={{
@@ -28,7 +28,7 @@ export default function BottomTabNavigator() {
             />
           ),
         }}
-      />
+      /> */}
       <Tab.Screen
         name="TimeTab"
         component={TimeNavigator}
@@ -36,20 +36,6 @@ export default function BottomTabNavigator() {
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons
               name="clock-outline"
-              size={size}
-              color={color}
-            />
-          ),
-        }}
-      />
-
-      <Tab.Screen
-        name="StatisticTab"
-        component={StatisticsNavigator}
-        options={{
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons
-              name="chart-bar"
               size={size}
               color={color}
             />
@@ -69,8 +55,21 @@ export default function BottomTabNavigator() {
           ),
         }}
       />
-
       <Tab.Screen
+        name="StatisticTab"
+        component={StatisticsNavigator}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons
+              name="chart-bar"
+              size={size}
+              color={color}
+            />
+          ),
+        }}
+      />
+
+      {/* <Tab.Screen
         name="MineTab"
         component={MineNavigator}
         options={{
@@ -78,7 +77,7 @@ export default function BottomTabNavigator() {
             <MaterialCommunityIcons name="account" size={size} color={color} />
           ),
         }}
-      />
+      /> */}
     </Tab.Navigator>
   );
 }
