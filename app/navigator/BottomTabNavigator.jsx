@@ -1,5 +1,5 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import LogNavigator from './LogNavigator';
+import ReciteNavigator from './ReciteNavigator';
 import MineNavigator from './MineNavigator';
 import StatisticsNavigator from './StatisticsNavigator';
 import TimeNavigator from './TimeNavigator';
@@ -16,7 +16,7 @@ export default function BottomTabNavigator() {
         headerShown: false,
       }}
     >
-      <Tab.Screen
+      {/* <Tab.Screen
         name="MomentsTab"
         component={MomentsNavigator}
         options={{
@@ -28,7 +28,7 @@ export default function BottomTabNavigator() {
             />
           ),
         }}
-      />
+      /> */}
       <Tab.Screen
         name="TimeTab"
         component={TimeNavigator}
@@ -42,7 +42,19 @@ export default function BottomTabNavigator() {
           ),
         }}
       />
-
+      <Tab.Screen
+        name="ReciteTab"
+        component={ReciteNavigator}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons
+              name="file-document"
+              size={size}
+              color={color}
+            />
+          ),
+        }}
+      />
       <Tab.Screen
         name="StatisticTab"
         component={StatisticsNavigator}
@@ -56,21 +68,8 @@ export default function BottomTabNavigator() {
           ),
         }}
       />
-      <Tab.Screen
-        name="LogTab"
-        component={LogNavigator}
-        options={{
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons
-              name="file-document"
-              size={size}
-              color={color}
-            />
-          ),
-        }}
-      />
 
-      <Tab.Screen
+      {/* <Tab.Screen
         name="MineTab"
         component={MineNavigator}
         options={{
@@ -78,7 +77,7 @@ export default function BottomTabNavigator() {
             <MaterialCommunityIcons name="account" size={size} color={color} />
           ),
         }}
-      />
+      /> */}
     </Tab.Navigator>
   );
 }
