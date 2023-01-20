@@ -5,6 +5,7 @@ import StatisticsNavigator from './StatisticsNavigator';
 import TimeNavigator from './TimeNavigator';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import MomentsNavigator from './MomentsNavigator';
+import MessageNavigator from './MessageNavigator';
 
 const Tab = createBottomTabNavigator();
 
@@ -52,6 +53,15 @@ export default function BottomTabNavigator() {
               size={size}
               color={color}
             />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="MessageTab"
+        component={MessageNavigator}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="message" size={size} color={color} />
           ),
         }}
       />
