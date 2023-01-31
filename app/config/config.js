@@ -1,7 +1,8 @@
 import * as Updates from 'expo-updates';
 
 let Config = {
-  apiUrl: 'https://jsonplaceholder.typicode.com/posts/1',
+  apiUrl: 'https://192.168.10.91:7040',
+  // apiUrl: 'https://jsonplaceholder.typicode.com/posts/1',
 };
 
 if (Updates.channel === 'preview') {
