@@ -18,13 +18,13 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.fredjiang.smalltime"
+      "bundleIdentifier": "com.happysmalltime.fred",
+      "buildNumber": "3"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF",
-        "buildNumber": "1"
+        "backgroundColor": "#FFFFFF"
       },
       "package": "com.fredjiang.smalltime"
     },
