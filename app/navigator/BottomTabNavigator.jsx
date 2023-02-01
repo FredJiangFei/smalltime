@@ -56,7 +56,7 @@ export default function BottomTabNavigator() {
           ),
         }}
       />
-      <Tab.Screen
+      {/* <Tab.Screen
         name="MessageTab"
         component={MessageNavigator}
         options={{
@@ -64,7 +64,7 @@ export default function BottomTabNavigator() {
             <MaterialCommunityIcons name="message" size={size} color={color} />
           ),
         }}
-      />
+      /> */}
       <Tab.Screen
         name="StatisticTab"
         component={StatisticsNavigator}

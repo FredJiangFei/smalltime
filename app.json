@@ -18,7 +18,8 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.fredjiang.smalltime"
+      "bundleIdentifier": "com.fredjiang.smalltime",
+      "buildNumber": "1"
     },
     "android": {
       "adaptiveIcon": {
