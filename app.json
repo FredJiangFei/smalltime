@@ -23,7 +23,8 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "backgroundColor": "#FFFFFF",
+        "buildNumber": "1"
       },
       "package": "com.fredjiang.smalltime"
     },
