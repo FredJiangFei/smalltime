@@ -15,7 +15,10 @@
       }
     },
     "production": {
-      "channel": "production"
+      "channel": "production",
+      "ios": {
+        "credentialsSource": "local"
+      }
     }
   },
   "submit": {

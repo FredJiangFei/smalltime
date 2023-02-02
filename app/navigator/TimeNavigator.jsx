@@ -6,7 +6,7 @@ const Stack = createNativeStackNavigator();
 export default function TimeNavigator() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Time" component={TimeScreen} />
+      <Stack.Screen name="Time123" component={TimeScreen} />
     </Stack.Navigator>
   );
 }

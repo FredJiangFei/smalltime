@@ -11,7 +11,9 @@
     "preview-android": "eas build --profile preview --platform android",
     "update": "eas update --branch preview",
     "test": "jest --watch",
-    "reset": "npx react-native start --reset-cache"
+    "reset": "npx react-native start --reset-cache",
+    "build": "eas build --platform ios",
+    "submit": "eas submit -p ios --latest"
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.4.0",
